@@ -1,7 +1,3 @@
-/Course.class
-/Department.class
-/Instructor.class
-/Mark.class
-/Seminar.class
-/Student.class
-/Subject.class
+/CourseDao.class
+/DataBaseInit.class
+/DepartmentDao.class

@@ -14,6 +14,12 @@ public class Department {
 	}
 	
 	
+	
+	
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
+	}
+
 	public Department(String name) {
 		super();
 		this.name = name;

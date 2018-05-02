@@ -53,25 +53,20 @@ public class DataBaseInit {
                 String sql = "CREATE TABLE Department\n" +
                         "(\n" +
                         "    DepartmentId INT PRIMARY KEY NOT NULL AUTOINCREMENT,\n" +
-                        "    DepartmentName VARCHAR(255) NOT NULL,\n" +
-                        ");";
-                statement.execute(sql);
-
-                sql = "CREATE TABLE Courses(" +
-                        "   AuthorId INT PRIMARY KEY NOT NULL AUTOINCREMENT," +
+                        "    DepartmentName VARCHAR(255) NOT NULL\n" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Subject(" +
                         "   SubjectId VARCHAR(255) PRIMARY KEY," +
                         "   SubjectName VARCHAR(255)," +
-                        "   Courses VARCHAR(255)," +
+                        "   Courses VARCHAR(255)\n" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Mark(" +
                         "   MarkId INT NOT NULL AUTOINCREMENT," +
-                        "   SubjectId INT NOT NULL" +
+                        "   SubjectId INT NOT NULL \n" +
                         ");";
                 statement.execute(sql);
 
@@ -79,7 +74,7 @@ public class DataBaseInit {
                         "   InstructorId INT NOT NULL AUTOINCREMENT," +
                         "   InstructorName VARCHAR(255)," +
                         "   DepartmentId INT NOT NULL," +
-                        "   EducatedSubjects VARCHAR(255)," +
+                        "   EducatedSubjects VARCHAR(255) \n" +
                         ");";
                 statement.execute(sql);
 
@@ -87,14 +82,14 @@ public class DataBaseInit {
                         "   StudentId VARCHAR(255) PRIMARY KEY NOT NULL," +
                         "   StudentName VARCHAR(255) PRIMARY KEY NOT NULL" +
                         "   Subjects VARCHAR(255)," +
-                        "   Marks VARCHAR(255)," +
+                        "   Marks VARCHAR(255) \n" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Seminar(" +
                         "   SeminarId INT NOT NULL AUTOINCREMENT," +
                         "   SeminarName VARCHAR(255)," +
-                        "   Students VARCHAR(255)" +
+                        "   Students VARCHAR(255) \n" +
                         ");";
                 statement.execute(sql);
                 System.out.println("Database created");

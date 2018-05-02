@@ -3,30 +3,18 @@ import java.util.List;
 public class Subject {
 	private String SubjectId;
 	private String name;	
-	private List<Course> courses;
+	private List<String> courses;
 	
-	public List<Course> getCourses() {
+	public List<String> getCourses() {
 		return courses;
 	}
-	public void setCourses(List<Course> courses) {
+	public void setCourses(List<String> courses) {
 		this.courses = courses;
 	}
 	
-	public Course getCourseByName(String name) {
-		boolean con = true;
-		int i = 0;
-		while (con) {
-			if(courses.get(i).getName().equals(name)) {
-				return courses.get(i);
-			}
-			i++;
-		}
-		return null;
-	}
-	
 	public void addCourse(String course) {
-		if(!courses.contains(getCourseByName(course)));
-			courses.add(new Course(course));
+		if(!courses.contains(course))
+			courses.add(course);
 	}
 	
 	public String getName() {
@@ -42,7 +30,7 @@ public class Subject {
 	public void setSubjectId(String subjectId) {
 		SubjectId = subjectId;
 	}
-	public Subject(String subjectId, String name, List<Course> courses) {
+	public Subject(String subjectId, String name, List<String> courses) {
 		super();
 		SubjectId = subjectId;
 		this.name = name;
