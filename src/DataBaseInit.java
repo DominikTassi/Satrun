@@ -50,57 +50,51 @@ public class DataBaseInit {
             connection.setAutoCommit(false);
             if(connection != null){
                 Statement statement = connection.createStatement();
-                String sql = "CREATE TABLE Book\n" +
+                String sql = "CREATE TABLE Department\n" +
                         "(\n" +
-                        "    ISBN INT PRIMARY KEY,\n" +
-                        "    BookName VARCHAR(255) NOT NULL,\n" +
-                        "    SubjectId INT NOT NULL,\n" +
-                        "    AuthorId INT NOT NULL,\n" +
-                        "    BookPrice INT NOT NULL,\n" +
-                        "    PublisherId INT NOT NULL,\n" +
-                        "    BookPublicationDate DATE NOT NULL,\n" +
-                        "    BookLanguage INT NOT NULL\n" +
+                        "    DepartmentId INT PRIMARY KEY NOT NULL AUTOINCREMENT,\n" +
+                        "    DepartmentName VARCHAR(255) NOT NULL,\n" +
                         ");";
                 statement.execute(sql);
 
-                sql = "CREATE TABLE Author(" +
+                sql = "CREATE TABLE Courses(" +
                         "   AuthorId INT PRIMARY KEY NOT NULL AUTOINCREMENT," +
-                        "   AuthorName VARCHAR(255) NOT NULL," +
-                        "   AuthorBirth DATE NOT NULL," +
-                        "   Nationality VARCHAR(255) NOT NULL" +
-                        ");";
-                statement.execute(sql);
-
-                sql = "CREATE TABLE Borrow(" +
-                        "   BorrowId INT PRIMARY KEY NOT NULL," +
-                        "   BookId INT PRIMARY KEY NOT NULL," +
-                        "   UserId INT NOT NULL," +
-                        "   BorrowDate DATE NOT NULL" +
-                        ");";
-                statement.execute(sql);
-
-                sql = "CREATE TABLE Publisher(" +
-                        "   PublisherId INT NOT NULL AUTOINCREMENT," +
-                        "   PublisherName VARCHAR(255) PRIMARY KEY NOT NULL" +
-                        ");";
-                statement.execute(sql);
-
-                sql = "CREATE TABLE Stock(" +
-                        "   BookId INT PRIMARY KEY NOT NULL," +
-                        "   BookPiece INT NOT NULL" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Subject(" +
-                        "   SubjectId INT NOT NULL AUTOINCREMENT," +
-                        "   SubjectName VARCHAR(255) PRIMARY KEY NOT NULL" +
+                        "   SubjectId VARCHAR(255) PRIMARY KEY," +
+                        "   SubjectName VARCHAR(255)," +
+                        "   Courses VARCHAR(255)," +
                         ");";
                 statement.execute(sql);
 
-                sql = "CREATE TABLE User(" +
-                        "   UserId INT NOT NULL AUTOINCREMENT," +
-                        "   UserName VARCHAR(255) PRIMARY KEY NOT NULL," +
-                        "   Password VARCHAR (255) NOT NULL" +
+                sql = "CREATE TABLE Mark(" +
+                        "   MarkId INT NOT NULL AUTOINCREMENT," +
+                        "   SubjectId INT NOT NULL" +
+                        ");";
+                statement.execute(sql);
+
+                sql = "CREATE TABLE Instructor(" +
+                        "   InstructorId INT NOT NULL AUTOINCREMENT," +
+                        "   InstructorName VARCHAR(255)," +
+                        "   DepartmentId INT NOT NULL," +
+                        "   EducatedSubjects VARCHAR(255)," +
+                        ");";
+                statement.execute(sql);
+
+                sql = "CREATE TABLE Student(" +
+                        "   StudentId VARCHAR(255) PRIMARY KEY NOT NULL," +
+                        "   StudentName VARCHAR(255) PRIMARY KEY NOT NULL" +
+                        "   Subjects VARCHAR(255)," +
+                        "   Marks VARCHAR(255)," +
+                        ");";
+                statement.execute(sql);
+
+                sql = "CREATE TABLE Seminar(" +
+                        "   SeminarId INT NOT NULL AUTOINCREMENT," +
+                        "   SeminarName VARCHAR(255)," +
+                        "   Students VARCHAR(255)" +
                         ");";
                 statement.execute(sql);
                 System.out.println("Database created");

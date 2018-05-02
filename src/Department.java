@@ -1,8 +1,8 @@
 
 public class Department {
-	private String departmentId;
+	private int departmentId;
 	private String name;
-	public String getDepartmentId() {
+	public int getDepartmentId() {
 		return departmentId;
 	}
 	
