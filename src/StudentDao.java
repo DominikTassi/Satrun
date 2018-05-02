@@ -18,7 +18,7 @@ public class StudentDao extends DataBaseInit{
     	Student student = null;
     	String studentName = "";
     	String subjectList = "";
-    	List<Subject> students = new ArrayList<Subject>();
+    	List<Subject> subjects = new ArrayList<Subject>();
     	String markList = "";
     	List<Mark> marks = new ArrayList<Mark>();
     	
@@ -35,11 +35,42 @@ public class StudentDao extends DataBaseInit{
             	subjectList = rs.getString("Subjects");
             	markList = rs.getString("Marks");
             }
-            StringTokenizer st = new StringTokenizer(coursesList, ",");
-            while (st.hasMoreTokens()){
-            	courses.add(st.nextToken());
+            StringTokenizer stSubjects = new StringTokenizer(subjectList, ",");
+            while (stSubjects.hasMoreTokens()){
+            	String sqlSubject = "SELECT * FROM Subject WHERE SubjectId = (?)";
+            	PreparedStatement psSubject = connection.prepareStatement(sqlSubject);
+            	psSubject.setString(1,stSubjects.nextToken());
+            	ResultSet rsSubject = psSubject.executeQuery();
+            	
+            	String subjectId = "";
+            	String subjectName = "";
+            	String coursesList = "";
+            	List<String> courses = new ArrayList<String>();
+            	
+            	if(rs.next()) {
+            		subjectId = rsSubject.getString("SubjectId");
+            		subjectName = rsSubject.getString("SubjectName");
+            		coursesList = rsSubject.getString("Courses");
+            	}
+            	StringTokenizer stCourses = new StringTokenizer(coursesList, ",");
+                while (stCourses.hasMoreTokens()){
+                	courses.add(stCourses.nextToken());
+                }
+                subjects.add(new Subject(subjectId, subjectName, courses));
             }
-            subject = new Subject(subjectId, subjectName, courses);
+            
+            StringTokenizer stMarks = new StringTokenizer(markList, ",");
+            while(stMarks.hasMoreTokens()) {
+            	String sqlMark = "SELECT * FROM Mark WHERE MarkId = (?)";
+            	PreparedStatement psMark = connection.prepareStatement(sqlMark);
+            	psMark.setString(1, stMarks.nextToken());
+            	ResultSet rsMark = psMark.executeQuery();
+            	
+            	
+            }
+            
+            
+            
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
