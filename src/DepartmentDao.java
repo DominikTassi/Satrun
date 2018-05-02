@@ -42,4 +42,5 @@ public class DepartmentDao extends DataBaseInit{
         }
     	return department;
     }
+    
 }
