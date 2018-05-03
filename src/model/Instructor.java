@@ -5,6 +5,7 @@ public class Instructor {
 	private int instructorId;
 	private String name;
 	private List<Subject> educatedSubjects;
+	private String departmnet;
 	
 	public int getInstructorId() {
 		return instructorId;
@@ -30,12 +31,23 @@ public class Instructor {
 		this.instructorId = instructorId;
 	}
 
-	public Instructor(int instructorId, String name, List<Subject> educatedSubjects) {
+	public String getDepartmnet() {
+		return departmnet;
+	}
+
+	public void setDepartmnet(String departmnet) {
+		this.departmnet = departmnet;
+	}
+
+	public Instructor(int instructorId, String name, List<Subject> educatedSubjects, String departmnet) {
 		super();
 		this.instructorId = instructorId;
 		this.name = name;
 		this.educatedSubjects = educatedSubjects;
+		this.departmnet = departmnet;
 	}
+
+
 	
 	
 	

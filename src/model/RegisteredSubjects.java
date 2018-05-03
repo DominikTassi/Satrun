@@ -1,9 +1,18 @@
 package model;
 
 public class RegisteredSubjects {
+	private int RegisteredSubjectId;
 	private Subject subject;
 	private int mark;
 	private String course;
+	
+	
+	public int getRegisteredSubjectId() {
+		return RegisteredSubjectId;
+	}
+	public void setRegisteredSubjectId(int registeredSubjectId) {
+		RegisteredSubjectId = registeredSubjectId;
+	}
 	public Subject getSubject() {
 		return subject;
 	}

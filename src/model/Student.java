@@ -5,7 +5,7 @@ import java.util.List;
 public class Student {
 	private String id;
 	private String name;
-	private List<RegisteredSubjects> subjects = new ArrayList<>();
+	private List<RegisteredSubjects> RegisteredSubjects = new ArrayList<>();
 	private String seminar;
 	
 	public String getSeminar() {
@@ -27,16 +27,16 @@ public class Student {
 		this.name = name;
 	}
 	public List<RegisteredSubjects> getSubjects() {
-		return subjects;
+		return RegisteredSubjects;
 	}
 	public void setSubjects(List<RegisteredSubjects> subjects) {
-		this.subjects = subjects;
+		this.RegisteredSubjects = subjects;
 	}
 	public Student(String id, String name, List<RegisteredSubjects> subjects, String seminar) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.subjects = subjects;
+		this.RegisteredSubjects = subjects;
 		this.seminar = seminar;
 	}
 	

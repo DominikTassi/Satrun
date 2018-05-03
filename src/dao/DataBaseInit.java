@@ -71,7 +71,6 @@ public class DataBaseInit {
                 sql = "CREATE TABLE Student(" +
                         "   StudentId VARCHAR(255)NOT NULL," +
                         "   StudentName VARCHAR(255) PRIMARY KEY NOT NULL," +
-                        "   RegisteredSubjectsId VARCHAR(255)," +
                         "	Seminar VARCHAR(255)" +
                         ");";
                 statement.execute(sql);
