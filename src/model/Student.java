@@ -1,12 +1,11 @@
 package model;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
 	private String id;
 	private String name;
-	private List<Subject> subjects;
-	private List<Mark> marks;
-	private List<Course> courses;
+	private List<RegisteredSubjects> subjects = new ArrayList<>();
 	
 	
 	public List<Course> getCourses() {
