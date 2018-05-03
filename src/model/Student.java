@@ -1,3 +1,4 @@
+package model;
 import java.util.List;
 
 public class Student {
@@ -5,8 +6,15 @@ public class Student {
 	private String name;
 	private List<Subject> subjects;
 	private List<Mark> marks;
+	private List<Course> courses;
 	
 	
+	public List<Course> getCourses() {
+		return courses;
+	}
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
 	public List<Subject> getSubjects() {
 		return subjects;
 	}
@@ -40,14 +48,17 @@ public class Student {
 			}
 		}
 	}
-	
-	
-	public Student(String id, String name, List<Subject> subjects) {
+	public Student(String id, String name, List<Subject> subjects, List<Mark> marks, List<Course> courses) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.subjects = subjects;
+		this.marks = marks;
+		this.courses = courses;
 	}
+	
+	
+
 
 	
 	

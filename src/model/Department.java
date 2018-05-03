@@ -1,3 +1,4 @@
+package model;
 
 public class Department {
 	private int departmentId;

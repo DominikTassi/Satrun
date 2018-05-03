@@ -1,9 +1,12 @@
+package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import model.Subject;
 
 
 public class SubjectDao extends DataBaseInit{

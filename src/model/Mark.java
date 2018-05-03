@@ -1,4 +1,4 @@
-
+package model;
 public class Mark {
 	private Subject subject;
 	private int mark;

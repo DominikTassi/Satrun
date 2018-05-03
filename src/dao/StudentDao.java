@@ -1,9 +1,14 @@
+package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import model.Mark;
+import model.Student;
+import model.Subject;
 
 public class StudentDao extends DataBaseInit{
 	
@@ -61,11 +66,13 @@ public class StudentDao extends DataBaseInit{
             
             StringTokenizer stMarks = new StringTokenizer(markList, ",");
             while(stMarks.hasMoreTokens()) {
-            	String sqlMark = "SELECT * FROM Mark WHERE MarkId = (?)";
+            	String sqlMark = "SELECT * FROM Mark WHERE MarkId = (?) INNER JOIN Subject ON Mark.SubjectId = Subject.SubjectId";
             	PreparedStatement psMark = connection.prepareStatement(sqlMark);
             	psMark.setString(1, stMarks.nextToken());
             	ResultSet rsMark = psMark.executeQuery();
-            	
+            	if(rsMark.next()) {
+            		
+            	}
             	
             }
             

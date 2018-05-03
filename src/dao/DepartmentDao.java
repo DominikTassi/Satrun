@@ -1,6 +1,9 @@
+package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import model.Department;
 
 public class DepartmentDao extends DataBaseInit{
 	
