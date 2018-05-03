@@ -6,20 +6,6 @@ public class Student {
 	private String id;
 	private String name;
 	private List<RegisteredSubjects> subjects = new ArrayList<>();
-	
-	
-	public List<Course> getCourses() {
-		return courses;
-	}
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
-	}
-	public List<Subject> getSubjects() {
-		return subjects;
-	}
-	public void setSubjects(List<Subject> subjects) {
-		this.subjects = subjects;
-	}
 	public String getId() {
 		return id;
 	}
@@ -32,30 +18,19 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Mark> getMarks() {
-		return marks;
+	public List<RegisteredSubjects> getSubjects() {
+		return subjects;
 	}
-	public void setMarks(List<Mark> marks) {
-		this.marks = marks;
+	public void setSubjects(List<RegisteredSubjects> subjects) {
+		this.subjects = subjects;
 	}
 	
-	
-	public void addMarkBySubjectname(String subjectName, int mark) {
-		for (int i = 0; i < subjects.size(); i++) {
-			if(subjects.get(i).getName().equals(subjectName)) {
-				marks.add(new Mark(subjects.get(i), mark));
-			}
-		}
-	}
-	public Student(String id, String name, List<Subject> subjects, List<Mark> marks, List<Course> courses) {
+	public Student(String id, String name, List<RegisteredSubjects> subjects) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.subjects = subjects;
-		this.marks = marks;
-		this.courses = courses;
 	}
-	
 	
 
 
