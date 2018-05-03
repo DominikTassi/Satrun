@@ -78,6 +78,7 @@ public class DataBaseInit {
                 
                 sql = "CREATE TABLE RegisteredSubjects(" +
                 		"	RegisteredSubjectId INT NOT NULL AUTOINCREMENT," +
+                		"	StudentId VARCHAR(255) NOT NULL" +
                 		"	SubjectId VARCHAR(255) NOT NULL," +
                 		"	Mark INT DEFAULT 0," +
                 		"	Course VARCHAR(255) NOT NULL" +
