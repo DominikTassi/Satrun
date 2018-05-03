@@ -21,7 +21,7 @@ public class SubjectDao extends DataBaseInit{
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
             for(int i = 0; i < subject.getCourses().size(); i++) {
-            	String sql = "INSERT INTO Subject (SubjectId, SubjectName, Courses) VALUES(?, ?, ?)";
+            	String sql = "INSERT INTO Subject (SubjectId, SubjectName, Course) VALUES(?, ?, ?)";
             	PreparedStatement ps = connection.prepareStatement(sql);
             	ps.setString(1, subject.getSubjectId());
             	ps.setString(2, subject.getName());
@@ -58,7 +58,7 @@ public class SubjectDao extends DataBaseInit{
             }
             
             
-            sql = "INSERT INTO Subject (SubjectId, SubjectName, Courses) VALUES (?, ?, ?)";
+            sql = "INSERT INTO Subject (SubjectId, SubjectName, Course) VALUES (?, ?, ?)";
             ps = connection.prepareStatement(sql);
             ps.setString(1, subjectId);
             ps.setString(2, subjectName);
@@ -86,7 +86,7 @@ public class SubjectDao extends DataBaseInit{
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
-            String sql = "DELETE FROM Subject WHERE SubjectId = (?) AND Courses= (?)";
+            String sql = "DELETE FROM Subject WHERE SubjectId = (?) AND Course= (?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, subjectId);
             ps.setString(2, course);          
