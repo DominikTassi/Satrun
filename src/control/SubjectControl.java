@@ -15,4 +15,13 @@ public class SubjectControl {
 	public void addSubject(Subject subject) {
 		subjectDao.addSubject(subject);
 	}
+	
+	public void addCourseById(String id, String course) {
+		subjectDao.addCourseBySubjectId(id, course);
+	}
+	
+	public void deleteCourseById(String id, String course) {
+		subjectDao.deleteCourseBySubjectId(id, course);
+	}
+	
 }
