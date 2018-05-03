@@ -10,13 +10,37 @@
 </h:head>
 <h:body>
 	<center>
-		<p:button outcome="students.xhtml" value="Manage Students"
-			icon="ui-icon-star">
-		</p:button>
-		
-		<p:button outcome="/index" value="Manage Instructors"
-			icon="ui-icon-star">
-		</p:button>
+		<h:form>
+			<p:growl>
+				<p:autoUpdate />
+			</p:growl>
+
+			<p:panelMenu style="width:300px">
+				<p:submenu label="Manage Students">
+					<p:menuitem value="Add student" outcome="addStudent.xhtml"
+						icon="fa-child" />
+					<p:menuitem value="Register Subjects" outcome="students.xhtml"
+						icon="fa-graduation-cap" />
+					<p:menuitem value="Add Mark" outcome="students.xhtml"
+						icon="fa-edit" />
+					<p:menuitem value="Grade Points" outcome="students.xhtml"
+						icon="fa-bar-chart-o" />
+				</p:submenu>
+			</p:panelMenu>
+		</h:form>
+
+		<h:form>
+			<p:growl>
+				<p:autoUpdate />
+			</p:growl>
+
+			<p:panelMenu style="width:300px">
+				<p:submenu label="Manage Instructors">
+					<p:menuitem value="Add Instructor" outcome="students.xhtml"
+						icon="fa-child" />
+				</p:submenu>
+			</p:panelMenu>
+		</h:form>
 	</center>
 </h:body>
 </html>
