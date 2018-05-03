@@ -53,7 +53,7 @@ public class DataBaseInit {
                 Statement statement = connection.createStatement();
 
                 String sql = "CREATE TABLE Subject(" +
-                        "   SubjectId VARCHAR(255) PRIMARY KEY," +
+                        "   SubjectId VARCHAR(255)," +
                         "   SubjectName VARCHAR(255)," +
                         "   Courses VARCHAR(255)" +
                         ");";
@@ -62,14 +62,14 @@ public class DataBaseInit {
 
                 sql = "CREATE TABLE Instructor(" +
                         "   InstructorId INT NOT NULL AUTOINCREMENT," +
-                        "   InstructorName VARCHAR(255)," +
-                        "   DepartmentName String NOT NULL," +
+                        "   InstructorName VARCHAR(255) NOT NULL," +
+                        "   DepartmentName VARCHAR(255) NOT NULL," +
                         "   EducatedSubjectsId VARCHAR(255)" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Student(" +
-                        "   StudentId VARCHAR(255) PRIMARY KEY NOT NULL," +
+                        "   StudentId VARCHAR(255)NOT NULL," +
                         "   StudentName VARCHAR(255) PRIMARY KEY NOT NULL," +
                         "   RegisteredSubjectsId VARCHAR(255)," +
                         "	Seminar VARCHAR(255)" +
