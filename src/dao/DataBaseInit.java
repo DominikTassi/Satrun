@@ -61,7 +61,7 @@ public class DataBaseInit {
 
 
                 sql = "CREATE TABLE Instructor(" +
-                        "   InstructorId INT NOT NULL AUTOINCREMENT," +
+                        "   InstructorId INT NOT NULL AUTO_INCREMENT," +
                         "   InstructorName VARCHAR(255) NOT NULL," +
                         "   DepartmentName VARCHAR(255) NOT NULL," +
                         "   EducatedSubjectsId VARCHAR(255)" +
@@ -76,7 +76,7 @@ public class DataBaseInit {
                 statement.execute(sql);
                 
                 sql = "CREATE TABLE RegisteredSubjects(" +
-                		"	RegisteredSubjectId INT NOT NULL AUTOINCREMENT," +
+                		"	RegisteredSubjectId INT NOT NULL AUTO_INCREMENT," +
                 		"	StudentId VARCHAR(255) NOT NULL" +
                 		"	SubjectId VARCHAR(255) NOT NULL," +
                 		"	Mark INT DEFAULT 0," +

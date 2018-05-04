@@ -15,7 +15,7 @@ public class Test {
         courses.add("elso");
         courses.add("masodik");
         
-        Subject subject = new Subject("GEAIL-351B", "Operációs rendszerek", courses);
+        Subject subject = new Subject("GEAIL-351B", "Operacios rendszerek", courses);
         subjectDao.addSubject(subject);
         
         
