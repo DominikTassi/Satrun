@@ -15,16 +15,16 @@ public class StudentDao extends DataBaseInit{
     	DataBaseInit.getInstance();
     }
     
-    public void addStudent(Student student) {
+    public void addStudent(String studentId, String studentName, String seminar) {
     	try{
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
             String sql = "INSERT INTO Subject (StudentId, StudentName, Seminar) VALUES(?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, student.getId());
-            ps.setString(2, student.getName());
-            ps.setString(3, student.getSeminar());
+            ps.setString(1, studentId);
+            ps.setString(2, studentName);
+            ps.setString(3, seminar);
             ps.executeUpdate();
             connection.commit();
         } catch (ClassNotFoundException e) {

@@ -10,12 +10,24 @@
 </h:head>
 <h:body>
 	<center>
-			<div>
-				Add Student's name:
-				<p:inputText id="studentName"/>
-				Add Student's Id:
-				<p:inputText id="studentId"/>
-			</div>
+		<div>
+			Student's name:
+			<p:inputText id="studentName" />
+			Student's Id:
+			<p:inputText id="studentId" />
+			Seminar
+			<p:inputText id="seminar" />
+
+			<h:form>
+				<p:growl id="growl" life="2000" />
+
+
+				<p:commandLink id="Ajax"
+					actionListener="#{StudentControll.addstudent}">
+					<h:outputText value="Non-Ajax Submit" />
+				</p:commandLink>
+			</h:form>
+		</div>
 	</center>
 </h:body>
 </html>

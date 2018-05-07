@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="/home/dominik/Letöltések/sqlite-jdbc-3.21.0.jar"/>
 	<classpathentry kind="lib" path="/home/dominik/Letöltések/javax.faces.jar"/>
 	<classpathentry kind="lib" path="/home/dominik/Letöltések/primefaces-6.2.jar"/>
+	<classpathentry kind="lib" path="/home/dominik/Letöltések/javax.ejb.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

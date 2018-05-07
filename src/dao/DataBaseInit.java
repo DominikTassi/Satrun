@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBaseInit {
-    protected static String url = "jdbc:sqlite:./database/" + "SaturnDB";
+    protected static String url = "jdbc:sqlite:/home/dominik/eclipse-workspace/Saturn2/SaturnDB.db";
     private static DataBaseInit instance = null;
 
     public DataBaseInit(){
@@ -32,7 +32,7 @@ public class DataBaseInit {
     }
 
     private static void createDataBase(){
-        File file = new File("./database/SaturnDB");
+        File file = new File("/home/dominik/eclipse-workspace/Saturn2/SaturnDB.db");
         if (file.exists() && !file.isDirectory()) {
             System.out.println("Database already created");
             return;
@@ -61,7 +61,7 @@ public class DataBaseInit {
 
 
                 sql = "CREATE TABLE Instructor(" +
-                        "   InstructorId INT NOT NULL AUTO_INCREMENT," +
+                        "   InstructorId INTEGER AUTOINCREMENT," +
                         "   InstructorName VARCHAR(255) NOT NULL," +
                         "   DepartmentName VARCHAR(255) NOT NULL," +
                         "   EducatedSubjectsId VARCHAR(255)" +
@@ -76,10 +76,10 @@ public class DataBaseInit {
                 statement.execute(sql);
                 
                 sql = "CREATE TABLE RegisteredSubjects(" +
-                		"	RegisteredSubjectId INT NOT NULL AUTO_INCREMENT," +
+                		"	RegisteredSubjectId INTEGER AUTOINCREMENT," +
                 		"	StudentId VARCHAR(255) NOT NULL" +
                 		"	SubjectId VARCHAR(255) NOT NULL," +
-                		"	Mark INT DEFAULT 0," +
+                		"	Mark INTEGER DEFAULT 1," +
                 		"	Course VARCHAR(255) NOT NULL" +
                 		");";
                 statement.execute(sql);
