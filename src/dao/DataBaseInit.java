@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBaseInit {
-    protected static String url = "jdbc:sqlite:/home/dominik/eclipse-workspace/Saturn2/SaturnDB.db";
+    protected static String url = "jdbc:sqlite:/home/dominik/eclipse-workspace/Saturn2/Satrun/SaturnDB.db";
     private static DataBaseInit instance = null;
 
     public DataBaseInit(){
@@ -32,7 +32,7 @@ public class DataBaseInit {
     }
 
     private static void createDataBase(){
-        File file = new File("/home/dominik/eclipse-workspace/Saturn2/SaturnDB.db");
+        File file = new File("/home/dominik/eclipse-workspace/Saturn2/Satrun/SaturnDB.db");
         if (file.exists() && !file.isDirectory()) {
             System.out.println("Database already created");
             return;
@@ -53,33 +53,33 @@ public class DataBaseInit {
                 Statement statement = connection.createStatement();
 
                 String sql = "CREATE TABLE Subject(" +
-                        "   SubjectId VARCHAR(255)," +
-                        "   SubjectName VARCHAR(255)," +
-                        "   Courses VARCHAR(255)" +
+                        "   SubjectId CHAR(255)," +
+                        "   SubjectName CHAR(255)," +
+                        "   Course CHAR(255)" +
                         ");";
                 statement.execute(sql);
 
 
                 sql = "CREATE TABLE Instructor(" +
-                        "   InstructorId INTEGER AUTOINCREMENT," +
-                        "   InstructorName VARCHAR(255) NOT NULL," +
-                        "   DepartmentName VARCHAR(255) NOT NULL," +
-                        "   EducatedSubjectsId VARCHAR(255)" +
+                        "   InstructorId INT," +
+                        "   InstructorName CHAR(255) NOT NULL," +
+                        "   DepartmentName CHAR(255) NOT NULL," +
+                        "   EducatedSubjectsId CHAR(255)" +
                         ");";
                 statement.execute(sql);
 
                 sql = "CREATE TABLE Student(" +
-                        "   StudentId VARCHAR(255)NOT NULL," +
-                        "   StudentName VARCHAR(255) PRIMARY KEY NOT NULL," +
-                        "	Seminar VARCHAR(255)" +
+                        "   StudentId CHAR(255)NOT NULL," +
+                        "   StudentName CHAR(255) NOT NULL," +
+                        "	Seminar CHAR(255)" +
                         ");";
                 statement.execute(sql);
                 
                 sql = "CREATE TABLE RegisteredSubjects(" +
-                		"	RegisteredSubjectId INTEGER AUTOINCREMENT," +
-                		"	StudentId VARCHAR(255) NOT NULL" +
-                		"	SubjectId VARCHAR(255) NOT NULL," +
-                		"	Mark INTEGER DEFAULT 1," +
+                		"	RegisteredSubjectId INT," +
+                		"	StudentId CHAR(255) NOT NULL," +
+                		"	SubjectId CHAR(255) NOT NULL," +
+                		"	Mark INT DEFAULT 1," +
                 		"	Course VARCHAR(255) NOT NULL" +
                 		");";
                 statement.execute(sql);
