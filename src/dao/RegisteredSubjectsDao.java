@@ -23,7 +23,7 @@ public class RegisteredSubjectsDao extends DataBaseInit {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
-            String sql = "INSERT INTO RegisteredSubjects (SubjectId, StudentId, Courses) VALUES(?, ?, ?)";
+            String sql = "INSERT INTO RegisteredSubjects (SubjectId, StudentId, Course) VALUES(?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, subjectId);
             ps.setString(2, studentId);
@@ -49,7 +49,7 @@ public class RegisteredSubjectsDao extends DataBaseInit {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
-            String sql = "UPDATE TABLE RegisteredSubjects SET Mark = (?) WHERE SubjectId = (?) AND StudentId = (?)";
+            String sql = "UPDATE RegisteredSubjects SET Mark = (?) WHERE SubjectId = (?) AND StudentId = (?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, mark);
             ps.setString(2, SubjectId);

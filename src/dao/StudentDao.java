@@ -20,7 +20,7 @@ public class StudentDao extends DataBaseInit{
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(url);
             connection.setAutoCommit(false);
-            String sql = "INSERT INTO Subject (StudentId, StudentName, Seminar) VALUES(?, ?, ?)";
+            String sql = "INSERT INTO Student (StudentId, StudentName, Seminar) VALUES(?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, studentId);
             ps.setString(2, studentName);
